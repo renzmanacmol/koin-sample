@@ -13,11 +13,9 @@ import org.koin.core.scope.Scope
 import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : ComponentActivity(), AndroidScopeComponent {
-
 //    private val viewModel by viewModel<MainViewModel>()
     override val scope: Scope by activityScope()
     private val hello by inject<String>(named("bye"))
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         println(hello)
